@@ -1,19 +1,30 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Auth from "./pages/Auth";
+import Checkout from "./pages/Checkout";
+import Navbar from "./components/Navbar";
+
 import "./App.css";
-import { Link, Route, Routes } from "react-router-dom ";
+import AuthProvider from "./context/AuthContext";
+import ProductDetails from "./pages/ProductDetails";
+import CartProvider from "./context/CartContext";
+
 function App() {
   return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-      </Routes>
-    </div>
+    <AuthProvider>
+      <CartProvider>
+        <div className="app">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+          </Routes>
+        </div>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 
-// COMPONENT = Function that returns JSX
 export default App;
