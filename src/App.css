@@ -47,6 +47,13 @@ body {
   color: #333;
   text-decoration: none;
 }
+.icon {
+  max-width: 108px;
+  height: 32px;
+  margin-right: 0;
+  background-image: url("assets/react.svg");
+  
+}
 
 .navbar-links {
   display: flex;
