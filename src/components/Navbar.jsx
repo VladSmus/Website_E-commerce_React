@@ -8,7 +8,6 @@ export default function Navbar() {
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
           <div className="icon">SuperShop</div>
-          
         </Link>
         <div className="navbar-links">
           <Link to="/" className="navbar-link">

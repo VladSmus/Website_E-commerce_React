@@ -38,7 +38,7 @@ export default function Auth() {
       <div className="container">
         <div className="auth-container">
           <h1 className="page-title">
-            {mode === "signup" ? "Sign Up" : "Login"}
+            {mode === "signup" ? "Sign Up" : "Log in"}
           </h1>
           <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
             {error && <div className="error-message">{error}</div>}
@@ -82,7 +82,7 @@ export default function Auth() {
             </div>
 
             <button type="submit" className="btn btn-primary btn-large">
-              {mode === "signup" ? "Sign Up" : "Login"}
+              {mode === "signup" ? "Sign Up" : "Log in"}
             </button>
           </form>
 
@@ -91,7 +91,7 @@ export default function Auth() {
               <p>
                 Already have an account?{" "}
                 <span className="auth-link" onClick={() => setMode("login")}>
-                  Login
+                  Log in
                 </span>
               </p>
             ) : (
